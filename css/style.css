@@ -1,0 +1,186 @@
+/*Animating the img*/
+@-webkit-keyframes fire {
+  0% {
+    background-position: left 0 bottom 0;
+  }
+  30% {
+    background-position: left 1000px bottom 0;
+  }
+  70% {
+    background-position: left 2000px bottom 0;
+  }
+  100% {
+    background-position: left 3000px bottom 0;
+  }
+}
+@keyframes fire {
+  0% {
+    background-position: left 0 bottom 0;
+  }
+  30% {
+    background-position: left 1000px bottom 0;
+  }
+  70% {
+    background-position: left 2000px bottom 0;
+  }
+  100% {
+    background-position: left 3000px bottom 0;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Garamond", "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  place-items: center;
+  width: 100%;
+}
+
+img, svg, iframe {
+  width: 100%;
+}
+
+header {
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+  background: url(/img/sky.jpeg) repeat-x;
+  color: white;
+  -webkit-animation: fire 60s linear infinite;
+          animation: fire 60s linear infinite;
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  height: 70px;
+  margin-bottom: 200px;
+  z-index: 2;
+}
+header > #nike-icon {
+  width: 60px;
+  margin-left: 5%;
+  cursor: pointer;
+}
+header > h1 {
+  justify-self: center;
+}
+header > #cart-icon {
+  width: 25px;
+  justify-self: end;
+  margin-right: 5%;
+  cursor: pointer;
+}
+
+#page-main {
+  display: grid;
+}
+
+.page-main-section-shoes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  margin: 50px;
+  row-gap: 150px;
+  -moz-column-gap: 50px;
+       column-gap: 50px;
+}
+.page-main-section-shoes > div {
+  display: grid;
+  row-gap: 10px;
+  text-align: center;
+  place-items: center;
+}
+.page-main-section-shoes > div > img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 300px;
+  height: 300px;
+  perspective: 2000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+}
+.flip-card-back > .button-add-to-kart {
+  border: none;
+  color: white;
+  margin-top: 20px;
+  background-image: linear-gradient(45deg, #626262, #9bc5c3);
+  font-size: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 55%;
+  height: 15%;
+  -webkit-animation-name: buttonAnimation;
+          animation-name: buttonAnimation;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+}
+.flip-card-back > .button-checkout {
+  border: none;
+  color: white;
+  margin-top: 20px;
+  background-image: linear-gradient(45deg, #626262, #9bc5c3);
+  font-size: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 55%;
+  height: 15%;
+}
+.flip-card-back > button:active {
+  -webkit-animation: none;
+          animation: none;
+  background-image: linear-gradient(45deg, #9bc5c3, #626262);
+  color: rgb(206, 206, 206);
+}
+
+@-webkit-keyframes buttonAnimation {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes buttonAnimation {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.05);
+  }
+}/*# sourceMappingURL=style.css.map */
