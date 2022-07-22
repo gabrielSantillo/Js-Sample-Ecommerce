@@ -24,7 +24,7 @@ for(let counter = 0; counter < cart_array.length; counter++) {
     <img src="${cart_array[counter][`img_url`]}" class="cart-img">
     <h2 class="cart-title">${cart_array[counter][`title`]}</h2>
     <h3 class="cart-price">$${cart_array[counter][`price`]}</h3>
-    <button class="delete-button" id="${cart_array[counter][`title`]}">Delete Item</button>
+    <button class="delete-button" id="${cart_array[counter][`id`]}">Delete Item</button>
     </div>`);
     } 
     else {
@@ -74,16 +74,3 @@ for(let counter = 0; counter < delete_button.length; counter++) {
     delete_button[counter][`style`][`width`] = `30%`;
     delete_button[counter][`style`][`height`] = `130%`;
 }
-
-/** 
-
-function deleteItem(details) {
-    let delete_button_clicked = [];
-    delete_button_clicked = cart_array[counter];
-    for(let counter = 0; counter < cart_array.length; counter++) {
-        cart_array[counter].slice(counter, counter++);
-    }
-}
-
-let delete_button_clicked = document.getElementById(`${cart_array[counter][`title`]}`);
-delete_button_clicked.addEventListener(`click`, deleteItem)*/
